@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  binance-trader:
+    build:
+      context: .
+    container_name: binance-trader
+    restart: always
+    environment:
+      API_KEY: ${API_KEY}
+      SECRET_KEY: ${SECRET_KEY}
+      BINANCE_PROD_WS_BASE: ${BINANCE_PROD_WS_BASE}
+      BINANCE_TEST_API_BASE: ${BINANCE_TEST_API_BASE}

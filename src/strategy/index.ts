@@ -1,3 +1,4 @@
+import day from "dayjs";
 import { BinanceHTTPClient, BinanceWebSocketClient } from "../client";
 import {
   Side,
@@ -21,7 +22,9 @@ export const provideLiquidity = (
   const { symbol, profitSpread, orderQuantity } = config;
 
   wsClient.subscribeToPrice(symbol, async (price) => {
-    console.log(`\nThe latest price of ${symbol} is ${price}`);
+    console.log();
+    console.log(day().toString());
+    console.log(`The latest price of ${symbol} is ${price}`);
 
     // submit orders if there is no existing orders
     if (submittedBuyOrder === null || submittedSellOrder === null) {
